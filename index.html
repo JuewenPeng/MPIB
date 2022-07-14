@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--
+    Moon by GetTemplates.co
+    URL: https://gettemplates.co
+-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MPIB</title>
+    <meta name="description" content="Core HTML Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/lightcase/lightcase.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/mycss.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet"> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <!-- <link href="https://file.myfontastic.com/7vRKgqrN3iFEnLHuqYhYuL/icons.css" rel="stylesheet"> -->
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script> -->
+
+    <!-- pjw fontawesome.com -->
+    <!-- <script src="https://kit.fontawesome.com/4db0969a88.js" crossorigin="anonymous"></script> -->
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
+    <div class="boxed-page">
+        <nav id="gtco-header-navbar" class="navbar navbar-expand-lg py-4">
+    <div class="container">
+        <!-- <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="lnr lnr-moon"></span>
+        </a> -->
+        <div style="transform: translateY(-5px);"><img src="img/mpib_logo.png" alt="Brand" width="90"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-nav-header">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JuewenPeng/MPIB" target="_blank">GitHub</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB.pdf" target="_blank">Paper</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-supp.pdf" target="_blank">Supp</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-poster.pdf" target="_blank">Poster</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="title" class="bg-white" style="padding-top: 80px;">
+  <div class="container text-center" style="padding-left: 20px; padding-right: 20px;">
+    <!-- <div class="paper-title">BokehMe: When Neural Rendering Meets<br>Classical Rendering</div> -->
+    <h2 style="margin-top: 10px;"><b>MPIB: An MPI-Based Bokeh Rendering Framework<br>for Realistic Partial Occlusion Effects</b></h2>
+    <br>
+    <div class="paper-author">
+        <a href="https://scholar.google.com/citations?hl=en&user=fYC6lCUAAAAJ" target="_blank">Juewen Peng</a><sup>1</sup>,&nbsp;
+        <a href="https://jimmie33.github.io/" target="_blank">Jianming Zhang</a><sup>2</sup>
+        <a href="https://scholar.google.com/citations?hl=en&user=tUeWQ5AAAAAJ" target="_blank">Xianrui Luo</a><sup>1</sup>,&nbsp;
+        <a href="http://faculty.hust.edu.cn/LUHAO/en/index.htm" target="_blank">Hao Lu</a><sup>1</sup>,&nbsp;
+        <a href="https://sites.google.com/site/kexian1991/" target="_blank">Ke Xian</a><sup>1&thinsp;*</sup>,&nbsp;
+        <a href="http://english.aia.hust.edu.cn/info/1085/1528.htm" target="_blank">Zhiguo Cao</a><sup>1</sup>,&nbsp;
+    </div>
+    <br>
+    <div class="paper-institution">
+        <sup>1</sup>Huazhong University of Science and Technology<br>
+        <sup>2</sup>Adobe Research
+    </div>
+    <br>
+    <div class="paper-conference">ECCV 2022</div>
+    <!-- <br> -->
+    <div class="paper-teaser" style="padding-top: 30px;"><img src="img/teaser.jpg" alt="Teaser Image" width="90%"></div>
+    <br>
+    <br>
+    <br>
+  </div>
+</section>
+
+
+<section id="gtco-counter" class="overlay bg-fixed">
+    <div class="container">
+        <div class="section-content">
+            <div class="row" style="min-height: 115px">
+                <!-- Counter Item -->
+                <div class="col-md-3 col-sm-6 counter-item">
+                    <a class="paper-icon nav-link" href="https://github.com/JuewenPeng/MPIB" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                    <h5 style="margin-top: 10px; height: 20px;">GitHub</h5>
+                </div>
+                <!-- End of Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-md-3 col-sm-6 counter-item">
+                    <a class="paper-icon nav-link" href="https://github.com/JuewenPeng/BokehMe/blob/main/pdf/MPIB.pdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                        </svg>
+                    </a>
+                    <h5 style="margin-top: 10px; height: 20px;">Paper</h5>
+                </div>
+                <!-- End of Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-md-3 col-sm-6 counter-item">
+                    <a class="paper-icon nav-link" href="https://github.com/JuewenPeng/BokehMe/blob/main/pdf/MPIB-supp.pdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                            <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                        </svg>
+                    </a>
+                    <h5 style="margin-top: 10px; height: 20px;">Supplementary<br>Material</h5>
+                </div>
+                <!-- End of Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-md-3 col-sm-6 counter-item">
+                    <a class="paper-icon nav-link" href="https://github.com/JuewenPeng/BokehMe/blob/main/pdf/MPIB-poster.pdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-postcard" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5ZM10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3ZM13 8h-2V6h2v2Z"/>
+                        </svg>
+                    </a>
+                    <h5 style="margin-top: 10px; height: 20px;">Poster</h5>
+                </div>
+                <!-- End of Counter Item -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Counter Section --> 
+
+
+<section id="video" class="bg-white">
+    <div class="container" style="padding-left: 20px; padding-right: 20px;">
+        <div class="section-content">
+            <div class="title-warp">
+                <h2 class="section-title">Video</h2>
+            </div>
+            <div class="body">
+                <div style="position: relative; padding-top: 55%; text-align: center;">
+                    <iframe style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <!-- <video width="100%" controls>
+                    <source src="img/video.mp4"  type="video/mp4">
+                </video> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="abstract" class="bg-grey">
+    <div class="container" style="padding-left: 20px; padding-right: 20px;">
+        <div class="section-content">
+            <div class="title-warp">
+                <h2 class="section-title">Abstract</h2>
+            </div>
+            <div class="paper-text">
+                <p>
+                    Partial occlusion effects are a phenomenon that blurry objects near a camera are semi-transparent, resulting in partial appearance of occluded background. However, it is challenging for existing bokeh rendering methods to simulate realistic partial occlusion effects due to the missing information of the occluded area in an all-in-focus image. Inspired by the learnable 3D scene representation, Multiplane Image (MPI), we attempt to address the partial occlusion by introducing a novel MPI-based high-resolution bokeh rendering framework, termed MPIB. To this end, we first present an analysis on how to apply the MPI representation to bokeh rendering. Based on this analysis, we propose an MPI representation module combined with a background inpainting module to implement high-resolution scene representation. This representation can then be reused to render various bokeh effects according to the controlling parameters. To train and test our model, we also design a ray-tracing-based bokeh generator for data generation. Extensive experiments on synthesized and real-world images validate the effectiveness and flexibility of this framework.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="method" class="bg-white">
+    <div class="container" style="padding-left: 20px; padding-right: 20px;">
+        <div class="section-content">
+            <div class="title-warp">
+                <h2 class="section-title">Method</h2>
+            </div>
+
+            <div class="tab_contents">
+                <ul class="tab_nav">
+                    <li class="tabNav_active">
+                        <h5>Framework</h5>
+                    </li>
+                    <li>
+                        <h5>Bokeh Generator</h5>
+                    </li>
+                </ul>
+                <ul class="tab_box">
+                    <li class="tabBox_active">
+                        <div>
+                            <p>MPIB takes an all-in-focus image and a potentially imperfect disparity map as input to obtain a 3D scene representation of multiple RGBA planes. This representation is generated by an MPI representation module and a background inpainting module. Then, the scene representation can be reused to produce multiple bokeh images according to different controlling parameters.</p>
+                            <br>
+                            <div style="text-align: center;"><img src="img/framework.jpg" alt="Framework" width="95%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p>The ray-tracing-based bokeh generator is capable of creating a realistic bokeh image from a background RGB image and some foreground RGBA images with customized disparities and different controlling parameters. We design this bokeh generator for producing training and test data.</p>
+                            <br>
+                            <div style="text-align: center;"><img src="img/bokeh_generator.jpg" alt="Error Analysis" width="90%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="result" class="bg-grey">
+    <div class="container" style="padding-left: 20px; padding-right: 20px;">
+        <div class="section-content">
+            <div class="title-warp">
+                <h2 class="section-title">Visualization</h2>
+            </div>
+
+            <div class="tab_contents">
+                <ul class="tab_nav">
+                    <li class="tabNav_active">
+                        <h5>Comparison</h5>
+                    </li>
+                    <li>
+                        <h5>Animation</h5>
+                    </li>
+                </ul>
+                <ul class="tab_box">
+                    <li class="tabBox_active">
+                        <div style="text-align: center;">
+                            <p>Comparison with SOTA on real-world images. Disparity inputs are predicted by <a href="https://arxiv.org/abs/2103.13413" target="_blank">DPT</a>.</p>
+                            <table width="100%" style="margin-top: 20px; margin-bottom: 5px;">
+                                <tr>
+                                    <td class="select-scene" id="select-scene-web-new_11" onclick="selectSceneWeb('new_11')" style="padding-left: 0px; opacity: 1;"><img src="img/comparison/resize_new_11_all-in-focus.jpg" alt="comparison image 1"></td>
+                                    <td class="select-scene" id="select-scene-web-new_21" onclick="selectSceneWeb('new_21')"><img src="img/comparison/resize_new_21_all-in-focus.jpg" alt="comparison image 2"></td>
+                                    <td class="select-scene" id="select-scene-web-school_15" onclick="selectSceneWeb('school_15')"><img src="img/comparison/resize_school_15_all-in-focus.jpg" alt="comparison image 3"></td>
+                                    <td class="select-scene" id="select-scene-web-street_8" onclick="selectSceneWeb('street_8')"><img src="img/comparison/resize_street_8_all-in-focus.jpg" alt="comparison image 4"></td>
+                                    <td class="select-scene" id="select-scene-web-street_12" onclick="selectSceneWeb('street_12')"><img src="img/comparison/resize_street_12_all-in-focus.jpg" alt="comparison image 5"></td>
+                                    <td class="select-scene" id="select-scene-web-museum_3" onclick="selectSceneWeb('museum_3')" style="padding-right: 0px;"><img src="img/comparison/resize_museum_3_all-in-focus.jpg" alt="comparison image 6"></td>
+                                </tr>
+                            </table>
+
+                            <image-comparison id="compare-method-web" style="--image1: url('../img/comparison/new_11_all-in-focus.jpg'); --image2: url('../img/comparison/new_11_MPIB_fore.jpg'); margin-bottom: 5px;">
+                                <img id="base-method-web" src="img/comparison/new_11_all-in-focus.jpg">
+                            </image-comparison>
+                            
+
+                            <table width="100%">
+                                <tr>
+                                    <td align="left">
+                                        <select style="width: 130px;" id="select-method-web-left" onchange="selectMethodWeb('left')">
+                                            <option value="all-in-focus" selected="selected">All-in-Focus</option>
+                                            <option value="disparity">Disparity</option>
+                                            <option value="MPIB">Ours</option>
+                                            <option value="scatter">Scatter</option>
+                                            <option value="sterefo">SteReFo</option>
+                                            <option value="deeplens">DeepLens</option>
+                                            <option value="deepfocus-adapt">DeepFocus</option>
+                                        </select>
+                                    </td>
+                                    <td align="center">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn active" style="font-weight: normal;">
+                                            <input type="radio" checked name="radio-group" value="1" style="display: none;" onchange="selectFocus('fore')">&nbsp;Foreground Focus&nbsp;
+                                            </label>
+                                            <label class="btn">
+                                            <input type="radio" name="radio-group" value="1" style="display: none;" onchange="selectFocus('back')">&nbsp;Background Focus&nbsp;
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <select style="width: 130px;" id="select-method-web-right" onchange="selectMethodWeb('right')">
+                                            <option value="all-in-focus">All-in-Focus</option>
+                                            <option value="disparity">Disparity</option>
+                                            <option value="MPIB" selected="selected">Ours</option>
+                                            <option value="scatter">Scatter</option>
+                                            <option value="sterefo">SteReFo</option>
+                                            <option value="deeplens">DeepLens</option>
+                                            <option value="deepfocus-adapt">DeepFocus</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <label style="width: 130px; margin-left: 5px;">Left Image</label>
+                                    </td>
+                                    <td align="center">
+                                    </td>
+                                    <td align="right">
+                                        <label style="width: 130px; margin-right: 5px;">Right Image</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div style="text-align: center;">
+                            <p>Animations on real-world images with different controlling parameters.</p>
+                            
+                            <!-- w_i = 97*w_div_h/sum(w_div_h) % -->
+                            
+                            <h5 style="padding-top: 5px; padding-bottom: 5px;">Blur Amount</h5>
+                            <div style="text-align: center;">
+                                <img src="img/animations/K/museum_9-image.jpg" alt="Image K_1" width="40.07099999290862%">
+                                <img src="img/animations/K/new_48-image.jpg" alt="Image K_2" width="35.583882806202695%">
+                                <img src="img/animations/K/new_20-image.jpg" alt="Image K_3" width="21.34511720088868%">
+                            </div>
+                            <div style="text-align: center; margin-top: 5px;">
+                                <img src="img/animations/K/museum_9.gif" alt="Animation K_1" width="40.07099999290862%">
+                                <img src="img/animations/K/new_48.gif" alt="Animation K_2" width="35.583882806202695%">
+                                <img src="img/animations/K/new_20.gif" alt="Animation K_3" width="21.34511720088868%">
+                            </div>
+                            <br>
+
+                            <h5 style="padding-top: 5px; padding-bottom: 5px;">Refocused Disparity</h5>
+                            <div style="text-align: center;">
+                                <img src="img/animations/df/new_17-image.jpg" alt="Image df_1" width="39.55518395794867%">
+                                <img src="img/animations/df/zoo_2-image.jpg" alt="Image df_2" width="37.99526121031126%">
+                                <img src="img/animations/df/new_49-image.jpg" alt="Image df_3" width="19.449554831740066%">
+                            </div>
+                            <div style="text-align: center; margin-top: 5px;">
+                                <img src="img/animations/df/new_17.gif" alt="Animation df_1" width="39.55518395794867%">
+                                <img src="img/animations/df/zoo_2.gif" alt="Animation df_2" width="37.99526121031126%">
+                                <img src="img/animations/df/new_49.gif" alt="Animation df_3" width="19.449554831740066%">
+                            </div>
+                            <br>
+
+                            <h5 style="padding-top: 5px; padding-bottom: 5px;">Gamma Value</h5>
+                            <div style="text-align: center;">
+                                <img src="img/animations/gamma/new_47-image.jpg" alt="Image gamma_1" width="39.4192912507955%">
+                                <img src="img/animations/gamma/street_11-image.jpg" alt="Image gamma_2" width="36.93754963471321%">
+                                <img src="img/animations/gamma/new_65-image.jpg" alt="Image gamma_3" width="20.643159114491294%">
+                            </div>
+                            <div style="text-align: center; margin-top: 5px;">
+                                <img src="img/animations/gamma/new_47.gif" alt="Animation gamma_1" width="39.4192912507955%">
+                                <img src="img/animations/gamma/street_11.gif" alt="Animation gamma_2" width="36.93754963471321%">
+                                <img src="img/animations/gamma/new_65.gif" alt="Animation gamma_3" width="20.643159114491294%">
+                            </div>
+                            <br>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="citation" class="bg-white">
+    <div class="container" style="padding-left: 20px; padding-right: 20px;">
+        <div class="section-content">
+            <div class="title-warp">
+                <h2 class="section-title">Citation</h2>
+            </div>
+
+            <div class="paper-text">
+                <textarea class="form-control placeholder" readonly="" style="height: 155px; resize: none;">@inproceedings{Peng2022MPIB,
+  title = {MPIB: An MPI-Based Bokeh Rendering Framework for Realistic Partial Occlusion Effects},
+  author = {Peng, Juewen and Zhang, Jianming and Luo, Xianrui and Lu, Hao and Xian, Ke and Cao, Zhiguo},
+  booktitle = {The Proceedings of the European Conference on Computer Vision (ECCV)},
+  year = {2022}
+}</textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="mastfoot mb-3 bg-white py-4 border-top">
+    <div class="inner container" style="text-align: center;">
+        <p class="mb-0">This work was supported by Adobe. This website template was inspired by <a href="https://www.free-css.com/free-css-templates/page273/moon" target="_blank">Moon</a>.</p>
+    </div>
+</footer>
+    
+</div>
+    <!-- External JS -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
+    <script src="js/ajax.js"></script>
+    <script src="vendor/bootstrap/popper.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="vendor/select2/select2.min.js "></script>
+    <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+    <script src="vendor/isotope/isotope.min.js"></script>
+    <script src="vendor/lightcase/lightcase.js"></script>
+    <script src="vendor/waypoints/waypoint.min.js"></script>
+    <script src="vendor/countTo/jquery.countTo.js"></script>
+
+    <!-- Main JS -->
+    <script src="js/myjs.js "></script>
+    <script src="js/app.min.js "></script>
+    <!-- <script src="//localhost:35729/livereload.js"></script> -->
+</body>
+</html>
