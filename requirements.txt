@@ -1,0 +1,9 @@
+cupy==10.6.0
+cupy_cuda90==7.7.0
+munch==2.5.0
+numba==0.48.0
+numpy==1.18.5
+opencv_python==4.2.0.34
+PyYAML==6.0
+torch==1.8.1
+torchvision==0.9.1
