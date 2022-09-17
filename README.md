@@ -13,7 +13,7 @@
 <img src=https://user-images.githubusercontent.com/38718148/178954886-9c8bc5bf-fdb2-4bba-bbcc-2b77831884e8.jpg width="90%">
 </p>
 
-### [Project](https://juewenpeng.github.io/MPIB/) | [Paper](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB.pdf) | [Supp](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-supp.pdf) | [Poster](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-poster.pdf) | [Video](https://www.youtube.com/)
+### [Project](https://juewenpeng.github.io/MPIB/) | [Paper](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB.pdf) | [Supp](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-supp.pdf) | [Poster](https://github.com/JuewenPeng/MPIB/blob/main/pdf/MPIB-poster.pdf) | [Video](https://www.youtube.com/watch?v=xeSXrmVHBsk)
 
 This repository is the official PyTorch implementation of the ECCV 2022 paper "MPIB: An MPI-Based Bokeh Rendering Framework for Realistic Partial Occlusion Effects".
 
