@@ -302,17 +302,32 @@ if __name__ == '__main__':
     # In practice, make sure that the lower index corresponds to the nearer object in the second dimension
     # of the following three tensors, and do not let the disparities of different objects overlap with each other
     # by cautiously setting tensor "coffs"
-    images = torch.rand((4, 3, 3, 256, 256)).cuda()  # batch, num_object, C, H, W
-    alphas = torch.ones((4, 3, 1, 256, 256)).cuda()  # batch, num_object, C, H, W
-    coffs = torch.rand((4, 3, 3)).cuda()  # batch, num_object, num_param (a, b, c) (refer to Eq.7 of the paper)
+    images = torch.zeros((1, 3, 3, 256, 256)).cuda()  # batch, num_object, C, H, W
+    alphas = torch.zeros((1, 3, 1, 256, 256)).cuda()  # batch, num_object, C, H, W
+    coffs = torch.zeros((1, 3, 3)).cuda()  # batch, num_object, num_param (a, b, c) (refer to Eq.7 of the paper)
 
-    K = 50
-    df = 0.5
+    images[0, 0] = 1
+    images[0, 1] = 0.5
+    images[0, 2] = 0
+
+    alphas[0, 0, 0, 50:100, 50:100] = 1
+    alphas[0, 1, 0, 75:200, 75:200] = 1
+    alphas[0, 2] = 1
+
+    coffs[0, 0, 0], coffs[0, 0, 1], coffs[0, 0, 2] = -1e-4/0.9, -4e-4/0.9, 1/0.9
+    coffs[0, 1, 0], coffs[0, 1, 1], coffs[0, 1, 2] = 2e-4/0.5, -2e-4/0.5, 1/0.5
+    coffs[0, 2, 0], coffs[0, 2, 1], coffs[0, 2, 2] = -2e-4/0.01, 1e-4/0.01, 1/0.01
+
+    K = 50      # blur radius
+    df = 1/0.5  # depth of focus
     samples_per_side = 101
     import time
     torch.cuda.synchronize()
     start = time.time()
     for i in range(10):
-        module(images, alphas, coffs, K, df, samples_per_side)
+        bokeh = module(images, alphas, coffs, K, df, samples_per_side)
     torch.cuda.synchronize()
     print(time.time() - start)
+
+    import cv2
+    cv2.imwrite('bokeh.jpg', bokeh[0].detach().clone().permute(1, 2, 0).cpu().numpy() * 255)
