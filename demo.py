@@ -49,8 +49,8 @@ def main():
     cfg = DefaultMunch.fromDict(cfg, 'BokehConfig')
 
     inpnet = FFCResNetGenerator(**cfg.inpnet).to(device)
-    checkpoint = torch.load('/data4/pengjuewen/Code/lama/LaMa_models/lama-places/lama-fourier/models/best_resave_pjw.pth')
-    # checkpoint = torch.load(args.inpnet_checkpoint_path)
+    # checkpoint = torch.load('/data4/pengjuewen/Code/lama/LaMa_models/lama-places/lama-fourier/models/best_resave_pjw.pth')
+    checkpoint = torch.load(args.inpnet_checkpoint_path)
     inpnet.load_state_dict(checkpoint['model'])
     inpnet = torch.nn.DataParallel(inpnet)
 
