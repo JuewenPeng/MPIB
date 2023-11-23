@@ -298,6 +298,8 @@ class ModuleRenderRT(torch.nn.Module):
 
 
 if __name__ == '__main__':
+    import cv2
+    
     module = ModuleRenderRT().cuda()
     # In practice, make sure that the lower index corresponds to the nearer object in the second dimension
     # of the following three tensors, and do not let the disparities of different objects overlap with each other
@@ -312,22 +314,37 @@ if __name__ == '__main__':
 
     alphas[0, 0, 0, 50:100, 50:100] = 1
     alphas[0, 1, 0, 75:200, 75:200] = 1
-    alphas[0, 2] = 1
-
+    alphas[0, 2] = 1    
+    
     coffs[0, 0, 0], coffs[0, 0, 1], coffs[0, 0, 2] = -1e-4/0.9, -4e-4/0.9, 1/0.9
     coffs[0, 1, 0], coffs[0, 1, 1], coffs[0, 1, 2] = 2e-4/0.5, -2e-4/0.5, 1/0.5
     coffs[0, 2, 0], coffs[0, 2, 1], coffs[0, 2, 2] = -2e-4/0.01, 1e-4/0.01, 1/0.01
 
+    aif = torch.zeros((1, 3, 256, 256)).cuda()
+    disp = torch.zeros((1, 1, 256, 256)).cuda()
+    grid_y, grid_x = torch.meshgrid(torch.arange(256), torch.arange(256))
+    grid_y = grid_y[None, None].cuda()
+    grid_x = grid_x[None, None].cuda()
+    for i in range(images.shape[1]-1, -1, -1):
+        image_i = images[:, i]
+        alpha_i = alphas[:, i]
+        coff_i = coffs[:, i]
+        disp_i = (1 - coff_i[:, 0] * grid_x - coff_i[:, 1] * grid_y) / coff_i[:, 2]
+        aif = aif * (1 - alpha_i) + image_i * alpha_i
+        disp = disp * (1 - alpha_i) + disp_i * alpha_i
+    
+    cv2.imwrite('aif.jpg', aif[0].detach().clone().permute(1, 2, 0).cpu().numpy() * 255)
+    cv2.imwrite('disp.jpg', disp[0][0].detach().clone().cpu().numpy() * 255)
+    
     K = 50      # blur radius
-    df = 1/0.5  # depth of focus
+    zf = 1/0.5  # depth of focus
     samples_per_side = 101
     import time
     torch.cuda.synchronize()
     start = time.time()
     for i in range(10):
-        bokeh = module(images, alphas, coffs, K, df, samples_per_side)
+        bokeh = module(images, alphas, coffs, K, zf, samples_per_side)
     torch.cuda.synchronize()
     print(time.time() - start)
 
-    import cv2
     cv2.imwrite('bokeh.jpg', bokeh[0].detach().clone().permute(1, 2, 0).cpu().numpy() * 255)
